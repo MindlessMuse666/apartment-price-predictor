@@ -1,8 +1,9 @@
 import unittest
 import numpy as np
+
 from data_handling.data_preparation import DataPreparation
 from models.linear_regression_model import LinearRegressionModel
-from .test_data import *
+from tests.test_data import *
 import random
 
 
@@ -14,13 +15,15 @@ class TestApartmentPredictor(unittest.TestCase):
         """
         self.feature_col = "Площадь"
         self.target_col = "Стоимость"
+        
         # получаем все TEST_DATA
         self.all_test_data = [value for name, value in globals().items() if name.startswith("TEST_DATA_") and isinstance(value, dict)]
         
-        #перемешиваем данные случайным образом
+        # перемешиваем данные случайным образом
         random.shuffle(self.all_test_data)
+        
         # определяем количество используемых наборов данных
-        self.num_test_data = 5 #  выбираем кол-во наборов данных для тестирования
+        self.num_test_data = 5  # выбираем кол-во наборов данных для тестирования
         self.selected_test_data = self.all_test_data[:self.num_test_data]
 
 
@@ -79,20 +82,18 @@ class TestApartmentPredictor(unittest.TestCase):
 
 
     def test_model_predict_values_with_random_data_set(self):
-       """
-         Тестирует, что модель возвращает прогнозируемые значения не выходящие за рамки ожидаемого.
-       """
-       for test_data in self.selected_test_data:
+        """
+        Тестирует, что модель возвращает прогнозируемые значения не выходящие за рамки ожидаемого.
+        """
+        for test_data in self.selected_test_data:
             data_prep = DataPreparation(test_data)
             X, y = data_prep.get_features_and_target(self.feature_col, self.target_col)
             model = LinearRegressionModel()
             model.train(X, y)
 
-            X_predict = np.linspace(min(X)-5, max(X)+5, 50).reshape(-1, 1)
+            X_predict = np.linspace(min(X)-50, max(X)+50, 50).reshape(-1, 1)
             predictions = model.predict(X_predict)
 
-            #  тут нужно придумать проверку, что значения находятся в ожидаемых пределах.
-            #  но пока что я не понял как сделать корректный расчет в зависимости от разных тестовых наборов данных.
             self.assertIsInstance(predictions, np.ndarray)
             self.assertTrue(predictions.size > 0)
 

@@ -1,73 +1,13 @@
 # Apartment Price Predictor <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT-License image"></a>
 
-Проект для прогнозирования стоимости аренды квартиры на основе ее площади с использованием методов линейной регрессии.
+Проект для прогнозирования стоимости аренды квартиры на основе ее площади с использованием методов линейной регрессии. Этот проект является практической работой по:
+-  Тема 1.1: `Основы машинного обучения`
+-  Дисциплина: `МДК 13.01: Основы применения методов искусственного интеллекта в программировании`
 
 
 ## Описание
 
 Этот проект представляет собой реализацию модели машинного обучения для предсказания стоимости аренды квартиры в зависимости от ее площади. Модель основана на методе линейной регрессии и использует Python, а также библиотеки `numpy`, `pandas`, `scikit-learn` и `matplotlib`.
-
-
-## Зависимости
-
--   Python 3.8+
--   `numpy`
--   `pandas`
--   `scikit-learn`
--   `matplotlib`
-
-Все зависимости можно установить из файла `requirements.txt`.
-
-
-## Установка и запуск
-
-### Клонирование репозитория
-
-```bash
-git clone <ссылка_на_ваш_репозиторий>
-cd <название_папки_репозитория>
-```
-
-
-### Создание и активация виртуального окружения
-
-```bash
-python -m venv .venv
-# Для Windows (PowerShell):
-.venv\Scripts\Activate.ps1
-# Для Linux и macOS:
-source .venv/bin/activate
-```
-
-
-### Установка зависимостей
-
-```bash
-pip install -r requirements.txt
-```
-
-
-### Запуск юнит-тестов
-
-```bash
-python -m unittest tests/test_apartment_predictor.py
-```
-
-
-### Запуск скрипта main.py
-
-```bash
-python main.py
-```
-
-
-### Дополнительные команды
-
--  Для деактивации виртуального окружения используйте команду `deactivate`.
-
-```bash
-deactivate
-```
 
 
 ## Структура проекта
@@ -91,6 +31,62 @@ apartment-price-predictor/
   ├── LICENSE
   ├── main.py  # Основной скрипт
   └── README.md
+```
+
+
+## Зависимости
+
+-  `numpy`
+-  `pandas`
+-  `scikit-learn`
+-  `matplotlib`
+
+Все зависимости можно установить из файла `requirements.txt`.
+
+
+## Установка и запуск
+
+### Клонирование репозитория
+
+```bash
+git clone <ссылка_на_ваш_репозиторий>
+cd <название_папки_репозитория>
+```
+
+### Создание и активация виртуального окружения
+
+```bash
+python -m venv .venv
+# Для Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+# Для Linux и macOS:
+source .venv/bin/activate
+```
+
+### Установка зависимостей
+
+```bash
+pip install -r requirements.txt
+```
+
+### Запуск юнит-тестов
+
+```bash
+python -m unittest tests/test_apartment_predictor.py
+```
+
+### Запуск скрипта main.py
+
+```bash
+python main.py
+```
+
+### Дополнительные команды
+
+-  Для деактивации виртуального окружения используйте команду `deactivate`.
+
+```bash
+deactivate
 ```
 
 

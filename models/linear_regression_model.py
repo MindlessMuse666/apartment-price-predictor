@@ -8,7 +8,7 @@ class LinearRegressionModel:
     Класс для модели линейной регрессии.
     Инкапсулирует логику обучения модели и прогнозирования.
     """
-
+    
     def __init__(self):
         self.model = LinearRegression()
 
@@ -24,7 +24,7 @@ class LinearRegressionModel:
         self.model.fit(X, y)
 
 
-    def predict(self, X: np.ndarray) -> np.ndarray:
+    def predict(self, X_predict: np.ndarray) -> np.ndarray:
         """
         Прогнозирует значения для заданных признаков.
 
@@ -34,12 +34,13 @@ class LinearRegressionModel:
         Returns:
             np.ndarray: Массив с прогнозируемыми значениями.
         """
-        return self.model.predict(X)
+        return self.model.predict(X_predict)
 
 
     def get_model_coefficients(self) -> Tuple[float, float]:
         """
         Возвращает коэффициенты обученной модели.
+        
         Returns:
             Tuple[float, float]: Коэффициент и свободный член.
         """

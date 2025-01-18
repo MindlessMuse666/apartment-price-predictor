@@ -1,6 +1,6 @@
 import pandas as pd
-from typing import Tuple
 import numpy as np
+from typing import Tuple
 
 
 class DataPreparation:
@@ -27,4 +27,5 @@ class DataPreparation:
         """
         X = self.df[feature_col].values.reshape(-1, 1)  # Независимая переменная
         y = self.df[target_col].values  # Зависимая переменная
+        
         return X, y
